@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.0.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.6.RELEASE'
+}
+
+group 'se.taco'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
+    maven { url "https://raw.github.com/weddini/spring-boot-throttling/mvn-repo/" }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    //implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+
+bootJar {
+    archiveName = 'smart-hub.jar'
+}
+
+task wrapper(type: Wrapper) {
+    description = 'Generates gradlew[.bat] scripts for faster execution'
+    gradleVersion = '4.10'
+}
