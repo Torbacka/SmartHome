@@ -15,7 +15,7 @@ public class TemperatureController {
     private static final Logger logger = LoggerFactory.getLogger(TemperatureController.class);
 
 
-    @PostMapping(value = "/temperature", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity cloudEvent(@RequestBody String body) {
 
         logger.info("body: {}", body);
